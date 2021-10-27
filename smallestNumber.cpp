@@ -12,15 +12,9 @@ template<size_t N>
 int calculatedSmallestNumber(std::array<int, N> calculateMyNumbers) {
     // This function calculate smallest number
     int totalNumber = 100;
-    int times = 0;
 
     // process
     for (int loopNumberSecond : calculateMyNumbers) {
-        times += 1;
-        // output
-        std::cout << "The random number " << times << " is "
-        << loopNumberSecond << std::endl;
-
         if (loopNumberSecond < totalNumber) {
             totalNumber = loopNumberSecond;
         }
@@ -38,6 +32,10 @@ int main() {
     int calculateNumber;
     int smallestNumber;
 
+    // output
+    std::cout << "Here is a list of random numbers:" << std::endl;
+    std::cout << "" << std::endl;
+
     // process
     for (loopNumberFirst = 0; loopNumberFirst < 10; loopNumberFirst++) {
         std::random_device rseed;
@@ -45,11 +43,10 @@ int main() {
         std::uniform_int_distribution<int> idist(0, 100);
         calculateNumber = idist(rgen);
         myNumbers[loopNumberFirst] = calculateNumber;
+        // output
+        std::cout << "The random number " << loopNumberFirst + 1 << " is "
+        << calculateNumber << std::endl;
     }
-
-    // output
-    std::cout << "Here is a list of random numbers:" << std::endl;
-    std::cout << "" << std::endl;
 
     // call functions
     smallestNumber = calculatedSmallestNumber(myNumbers);
