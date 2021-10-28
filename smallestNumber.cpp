@@ -11,7 +11,7 @@
 template<size_t N>
 int calculatedSmallestNumber(std::array<int, N> calculateMyNumbers) {
     // This function calculate smallest number
-    int totalNumber = 100;
+    int totalNumber = calculateMyNumbers[0];
 
     // process
     for (int loopNumberSecond : calculateMyNumbers) {
